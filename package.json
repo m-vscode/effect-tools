@@ -1,0 +1,71 @@
+{
+  "name": "effect-tools",
+  "displayName": "Effect Tools",
+  "description": "A toolkit for improving efficiency",
+  "version": "0.0.1",
+  "publisher": "MisterZhouZhou",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "effectTools.setGlobalDelegate",
+        "title": "设置全局代理",
+        "category": "Effect Tools"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "effectTools.myTools",
+          "name": "My Effect Tools"
+        }
+      ]
+    },
+    "walkthroughs": [
+      {
+        "id": "effectTools.welcome",
+        "title": "Get started",
+        "description": "This is a description of the welcome page.",
+        "steps": [
+          {
+            "id": "effectTools.documentation",
+            "title": "Documentation",
+            "description": "This is a description",
+            "media": {
+              "markdown": "media/get-started.md"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
